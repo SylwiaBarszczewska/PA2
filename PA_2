@@ -96,7 +96,7 @@ def children_number_in_date(rows, date, hotel):
     for row in rows:
         if row[0] == hotel:
             if booking_date == date:
-                number_of_children += 1
+                number_of_children += row[4]
     return number_of_children
 
 
@@ -109,5 +109,16 @@ def display_reservation(rows, date):
 
 
     Please get check out date based on arrival_date and booked nights
+
     """
+    for row in rows:
+        columns = {
+            "hotel": row[0],
+            "check in": row[1],
+            "check out": row[1]+row[2],
+            "adults": row[3],
+            "children": row[4]
+
+
+   }
    
